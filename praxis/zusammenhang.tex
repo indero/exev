@@ -1,0 +1,94 @@
+\subsection{Zusammenhang zwischen zwei Merkmalen}
+%------------------------------------------------------------------------------------
+\subsubsection{Regressionsanalyse}
+\paragraph{Zusammehang zwischen Merkmalen}
+$n_w = 1500$ weibliche und $n_m = 500$ männliche Kunden haben alle einen Artikel gekauf, der in verschiedenen Farben verfügbar ist:
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Farbe & Blau & Grün & Rot & Summe \\  \midrule 
+Häufigkeit & 1000 & 600 & 400 & 2000 \\ \bottomrule
+\end{tabular}
+\end{table}
+Wenn das Einkaufsverhalten unabhängig ist, so müssten die relativen Häufigkeiten bezogen auf Männer und Frauen gleich sein, oder mindestens sehr nahe beieinander liegen(siehe \autoref{eq:zusammenhang:1}).
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}cllll@{}}
+\toprule
+\multirow{2}{*}{Geschlecht} & \multicolumn{4}{c}{Farbe} \\
+ & Blau & Grün & Rot & Summe \\ \midrule
+Weiblich & $(1000\cdot1500)\div2000$ & $(600\cdot1500)\div2000$ & $(400\cdot1500)\div2000$ & 1500 \\
+Männlich & $(1000\cdot150)\div2000$ & $(1000\cdot150)\div2000$ & $(1000\cdot150)\div2000$ & 500 \\
+\multicolumn{1}{l}{Summe} & \multicolumn{1}{l}{1000} & 600 & 400 & 2000 \\ \bottomrule
+\end{tabular}
+\end{table}\\
+\smallskip
+Wenn man nun die Resultate mit einer Tabelle aus, beispielsweise dem Vorjahr, vergleicht, und die Werte über "Pi-mal-Daumen" passen, sind die Merkmale eher voneinander abhängig.
+\pagebreak
+\paragraph{Minimiere die Summenformel}
+\begin{equation*}
+\sum_i^n(y_i - a - bx_i)^2
+\end{equation*}
+\begin{enumerate}
+\item Partielles Ableiten des Ausdrucks nach $a$ und nach $b$
+\item Nullsetzen der beiden partiellen Ableitungen
+\item Auflösen der beiden Gleichungen nach $a$ und $b$
+\end{enumerate}
+\begin{equation*}
+\ra{1.7}
+\begin{array}{rcl}
+a_1 &=& \overline{y}+b_1\cdot\overline{x}\\
+b_1 &=& \displaystyle\frac{\sum_{i=1}^n x_i y_i - n\cdot\overline{x}\cdot\overline{y}}{\sum_{i=1}^n x_i^2 - n\overline{x}^2}
+\end{array}
+\end{equation*}
+\subsubsection{Lineare Regression}
+\paragraph{Beispiel} 12 Studenten gingen im letzten Semester neben dem Studium einer Erwerbstätigkeit nach. In der nachstehenden Tabelle sind für die 12 Studenten A bis L der zeitliche Aufwand (Std/Woche) für die Erwerbstätigkeit X und der zeitzliche Aufwand (Std./Woche) für das Studium Y angegeben
+\smallskip
+\begin{table}[H]
+\ra{1.2}
+\centering
+\begin{tabular}{@{}lllllllllllll@{}}
+\toprule
+Student & A & B & C & D & E & F & G & H & I & J & K & L \\ \midrule
+Erwerbstätigkeit & 1 & 2 & 2 & 3 & 3 & 4 & 5 & 6 & 8 & 12 & 15 & 33 \\
+Studium & 39 & 37 & 36 & 40 & 36 & 37 & 34 & 36 & 33 & 33 & 32 & 27 \\ \bottomrule
+\end{tabular}
+\end{table}
+Ein Student, der für die Bestreitung seines Lebensunterhalts 6 Stunden pro Woche erwärbstätig sein muss, will anhand der vorliegenden Daten ermitteln, wieviel Zeit er für sein Studium aufbringen kann. Die Berechnung erfolgt mit \autoref{eq:regression:4-1} und \autoref{eq:regression:4-2}.
+\begin{table}[H]
+\ra{1.2}
+\centering
+\begin{tabular}{@{}llllll@{}}
+\toprule
+Student & $x_i$ & $y_i$ & $x_i y_i$ & $x_i^2$ & $y_i^2$ \\ \midrule
+A & 1 & 39 & 39 & 1 & 1521 \\
+B & 2 & 37 & 74 & 4 & 1369 \\
+C & 2 & 36 & 72 & 4 & 1296 \\
+D & 3 & 40 & 120 & 9 & 1600 \\
+E & 3 & 36 & 108 & 9 & 1296 \\
+F & 4 & 37 & 148 & 16 & 1369 \\
+G & 5 & 34 & 170 & 25 & 1156 \\
+H & 6 & 36 & 216 & 36 & 1296 \\
+I & 8 & 33 & 264 & 64 & 1089 \\
+J & 12 & 33 & 396 & 144 & 1089 \\
+K & 15 & 32 & 480 & 225 & 1024 \\
+L & 23 & 27 & 621 & 529 & 729 \\
+Summe & 84 & 420 & 2708 & 1066 & 14834 \\ \bottomrule
+\end{tabular}
+\end{table}
+Wir können nun mit den oben erwähnten Gleichungen die Werte berechnen.
+\begin{equation*}
+\begin{array}{rcl}
+b_1 &=& \frac{2708-12\cdot \frac{84}{12}\cdot \frac{420}{12}}{1066-12\cdot\left(\frac{84}{12}\right)^2} \\
+&=& -\frac{116}{239} \\
+&=& -0.49\\
+a_1 &=&\frac{420}{12}-(-\frac{116}{239})\cdot \frac{84}{12} \\
+&=& \frac{9177}{239} \\
+&=& 38.43 
+\end{array}
+\end{equation*}
+Daraus folgt zu allgemeinen Berechnung
+\begin{equation*}
+y=38.43 - 0.49 \cdot x \text{ mit } y(6) = 35.5\text{h}
+\end{equation*}

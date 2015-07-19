@@ -1,0 +1,128 @@
+%TODO: Beispiel hinzufügen, mit Formel verknüpfen
+\subsection{Mittelwerte und Spannweite}\label{praxis:mittelwerte}
+\begin{table}[h]
+\ra{1.2}
+\centering
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+Versicherungssumme\\ in Tsd & Anzahl Verträge & Median der Klasse & $x_ih_i$ & $H_j$ & Std. Abweichung & Varianz \\ \midrule
+4-10 & 20 & 7 & 140 & 20 & 481 & 11568.05 \\
+10-20 & 160 & 15 & 2400 & 180 & 2568 & 41214.4 \\
+20-30 & 80 & 25 & 2000 & 260 & 484 & 2928.20 \\
+30-40 & 40 & 35 & 1500 & 300 & 158 & 624.1 \\
+40-80 & 88 & 50 & 5280 & 388 & 2547.6 & 73752.02 \\
+80-120 & 12 & 100 & 1200 & 400 & 827.4 & 57049.23 \\ \bottomrule
+\end{tabular}
+\end{table}
+\begin{itemize}
+\item Durchschnittliche Versicherungssume(\autoref{theorie:mittelwerte:arith}):
+\begin{equation*}
+\overline{x} = \frac{1}{n}\sum_j x_jh_j = \frac{1}{400}\cdot 12420=3105
+\end{equation*}
+\item Dichte (\autoref{theorie:mittelwerte:dicht})
+\begin{align*}
+d_1=\frac{20}{10-4}=3.33, d_2=16, d_3=8, d_4=4, d_5=2.2, d_6=0.3
+\end{align*}
+\item Modus\\
+Aus den Dichten lässt sich herauslesen, dass Klasse 2 die höchste Dichte hat, diese ist also die Modusklasse. Berechnung des Modus(\autoref{theorie:mittelwerte:modus:2})
+\begin{equation*}
+\ra{2}
+\begin{array}{rcccl}
+M_0 &=& x_2^u+\displaystyle\frac{d_2-d_1}{(d_1-d_1)+(d_2-d_3)}\cdot(x_2^o-x_2^u)&& \\
+M_0 &=& 10+\displaystyle\frac{16-3.33}{(16-3.33)+(16-8)}\cdot(20-10) &=& 16130
+\end{array}
+\end{equation*}
+\item Median\\
+Der Median ist der Wert der geordneten Mitte von 400 (Summe aller Verträge), also 200. Diese Anzahl kommt in der 3. Klasse zu liegen. Damit ergibt sich der Median(\autoref{theorie:mittelwerte:quant}):
+\begin{equation*}
+\ra{2}
+\begin{array}{rcccl}
+M_e&=&x_3^u+\displaystyle\frac{\frac{n}{2}-H_2}{h_3}(x_3^o-x_3^u)&&\\
+M_e&=&20+\displaystyle\frac{400\div2-180}{80}(30-20)&=&22500
+\end{array}
+\end{equation*}
+\item Quantil\\
+Die erste Quantilklasse it $\frac{400}{4}=100$. Dies ist in Klasse 2. Analog zum Median berechnet sich das erste Quantil(\autoref{theorie:mittelwerte:quant}).
+\begin{equation*}
+\begin{array}{rcccl}
+Q_1&=&x_2^u+\displaystyle\frac{\frac{n}{4}-H_1}{h_2}(x_2^o-x_2^U)&&\\
+Q_1&=&10\displaystyle\frac{400\div4-20}{160}(20-10)&=&50000
+\end{array}
+\end{equation*}
+Das zweite Quantil ist der Median und das dritte Quantil entspricht dem ersten Quantil plus dem Median. 
+\pagebreak
+\item Quantils und Dezilabstände\\
+\subitem Quantilsabstände: Der Quantilsabstand bewegt sich 50\% um den Median.
+\begin{equation*}
+\begin{array}{rcl}
+Q_3-Q_1&=&ZQA\\
+40000 - 15000&=&25000
+\end{array}
+\end{equation*}
+\subitem Dezilabstände\\
+\begin{equation*}
+\begin{array}{rcccl}
+D_j&=&x_j^u+\displaystyle\frac{n\cdot\frac{1}{10}-H_{j-1}}{h_j}\cdot(x_j^o - x_j^u)&&\\
+D_9&=&40+\displaystyle\frac{400\cdot\frac{9}{10}-300}{88}\cdot(80-40)&=&67270
+\end{array}
+\end{equation*}
+Der Dezilabstand ist $D_9-D_1=56020$.
+\end{itemize}
+%------------------------------------------------------------------------------------------
+\subsection{Grundlagen der schliessenden Statistik}
+\begin{enumerate}
+\item Es sei X die Zufallsvariable X = Augenzahl bei Würfeln, dann galt für einen Wurf: $\mu=3.5, \sigma^2=2,92$. Wie sieht die Häufigkeit (Wahrscheinlichkeit), Varianz, Mittelwerte bei einem, zwei oder drei Würfen aus?\\
+% TODO: Tabelle schreiben
+Die 5 tritt 4 mal auf, die 6 Tritt 10 mal auf.
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+ & 1. Wurf & 2. Wurf & 3. Wurf \\ \midrule
+Mittelwert $\mu$ & 3.5 & 3.5 & 3.5 \\
+Varianz$\sigma^2$ & 2.92 & $\frac{2.92}{2}=1.46$ & $\frac{2.92}{3}=0.97$ \\
+Std. Abweichung $\sigma$ & 1.71 & 1.21 & 0.98 \\ \bottomrule
+\end{tabular}
+\end{table}
+% TODO: Bilder der Würfe
+\item Sie haben ein Situationsmodell einer Produktionseinrichtung erstellt, vom realen System wissen sie, dass diese Maschine im normalverteilten Mittel 10 Stück pro Sekunde produziert und die Standardabweichung von 1 Stück pro Sekunde besitzt. Sie führen der Simulationsumgebung 25 Experimente (Replications) durch. 
+\subitem Mit welcher Wahrscheinlichkeit wird der mittlere Ausstoss zwischen 9.8 und 10.2 Stück pro Sekunde liegen?
+\subitem Mit welcher Wahrscheinlichkeit wird der Ausstoss über 10.2 liegen?
+\subitem Wie verändert sich das Ergebniss, wenn sie statt dessen nur 5 bzw. 100 Experimente machen?\\
+Mit $\mu = \frac{10 S}{sec}$ und $\sigma=\frac{1 S}{sec}$. Daraus folgt:
+\begin{equation*}
+Z_{\mbox{Stichprobe}}=\frac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}
+\end{equation*}
+Gesucht ist nun:
+\begin{equation*}
+\ra{2}
+\begin{array}{rcl}
+&P&(9.8\geq\overline{x}\geq10.2)\\
+&P&\left(\displaystyle\frac{9.8-\mu}{\frac{\sigma}{\sqrt{n}}}\geq\displaystyle\frac{\overline{x}-\mu}{\frac{\sigma}{\sqrt{n}}}\geq\displaystyle\frac{10.2-\mu}{\frac{\sigma}{\sqrt{n}}}\right)\\
+\Longrightarrow&P&\left(\displaystyle\frac{9.8-10}{0.2}\geq\displaystyle\frac{\overline{x}-10}{0.2}\geq\displaystyle\frac{10.2-10}{0.1}\right)\\
+&P&(Z_1\geq\overline{Z}\geq Z_2)=1-\alpha
+\end{array}
+\end{equation*}
+\pagebreak[4]
+\item In welchem symmetrischen Intervall liegt der Mittelwert bei vorgegebener Wahrscheinlichkeit, oft mit $1-\alpha$ bezeichnet. Hier sei $1-\alpha=0.9$. 
+\subitem Z ist nach Voraussetzung N(0,1) verteilt, dann folgt unmittelbar: $P(-z\leq\overline{z}\leq z)=1-\alpha \Rightarrow 1-\alpha = F_0(z)-F_0(-z)$, wobei z die obere und untere Schranke bildet: 
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+$n$ & $\sigma\div n^2$ & $Z\cdot \sigma \div n^2$ & Intervall \\ \midrule
+5 & 0.45 & 0.738 & [9.262;10.738] \\
+25 & 0.2 & 0.328 & [9.672;10.328] \\
+100 & 0.1 & 0.164 & [9.836;10.164] \\ \bottomrule
+\end{tabular}
+\end{table}
+Dies finden wir wiederum mit der folgenden Formel heraus:
+\begin{equation*}
+\overline{Z}=\frac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}
+\end{equation*}
+Daraus folgt \autoref{eq:stichprobenumfang:1}.
+\end{enumerate}
+%------------------------------------------------------------------------------------------
+\input{praxis/schaetzverfahren.tex}
+\input{praxis/testverfahren.tex}
+\input{praxis/zusammenhang.tex}

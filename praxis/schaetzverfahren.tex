@@ -1,0 +1,50 @@
+\subsection{Schätzverfahren}
+\paragraph{Beispiel} In einer Wurstfabrik werden u.a. Leberwürste hergestellt. Aus langjährigen Messreihen ist bekannt, dass das Füllgewicht der Leberwürste normalvertwilt ist. Das Soll-Mindestgewicht der Würste beträgt 125g. Aus der Tagesproduktion von 600 Würsten wurder 26 Würste zufällig ohne Zrücklegen entnommen und gewogen. Die Messergebnisse für das Füllgewicht (in Gramm) wurden in eine Tabelle eingetragen.
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+128.4 & 123.8 & 123.5 & 126.9 & 125.5 & 123.1 & 124.9 \\
+123.1 & 126.6 & 121.9 & 125.3 & 123.4 & 122.1 & 124   \\
+123.3 & 123.2 & 123.2 & 124   & 122.8 & 127.1 & 125.7 \\
+127.1 & 125.8 & 123.7 & 125.9 & 124.9 &       &       \\ \bottomrule
+\end{tabular}
+\end{table}\\
+Die Daten haben den Mittelwert: $ \overline{X}=124.5\text{g}$ und eine Varianz $s=1.72\text{g}$.
+\subparagraph{Erstellen des 95\% Konfidenzintervall:} $\mu = 26$. Da $s = \sigma^2$:
+\begin{align*}
+z = \frac{\sqrt{1.72}}{\sqrt{26}} = 0.2572 \\
+\end{align*}
+Nun muss man den gesuchrten Wert in der Tabelle der Normalverteilung nachschlagen, in unserem Fall 0.975 (weil es das Mittel von 95\% ist, und die Verteilung Normalverteilt ist, können wir einfach die hälfte von 5 dazuzählen). Dabei erhalten wir 1.96. Damit nun das Intervall festgelegt werden kann, muss man erst z mit dem Wert der Tabelle multiplizieren, und dann das Intervall dazu bzw. abziehen.
+\begin{align*}
+0.272 \cdot 1.96 = 0.5041 \\
+W(123.9959\leq124.5\leq125.0041)
+\end{align*}
+\subparagraph{Ermittlung der Konfidenz für das mit 125g nach unten begrenze Intervall für $\mu$}
+Wir kennen aus \autoref{eq:stichprobenumfang:1} dass: $ \overline{\mu}-z\frac{\sigma}{\sqrt{n}} > 125\text{g}$. Da wir $n=26, \sigma^2=1.72, \overline{N}=124.5$ bereits kennen, können wir diese lediglich einsetzen.
+\begin{equation*}
+\begin{array}{rrcl}
+&124.5-z\frac{\sqrt{1.72}}{\sqrt{26}}&>&125 \\
+\Rightarrow&z&>&1.9440 \\
+\rightarrow&z(97.5\%) && \
+\end{array}
+\end{equation*}
+Den Wert für $z(x)$ muss man in der Tabelle "rückwärts" nachschlagen, also den entsprechenden Wert so genau wie möglich bestimmen und die Zahlen am linken und oberern Rand kombinieren.
+%-----------------------------------------------------------------------------------------------------------------------------------------------
+%TODO
+%\paragraph{Beispiel} Ein Chemieunternehmen möchte den Bekanntheitsgrad eines von ihm hergetellten Waschmittels in Erfahrung bringen. Dazu werden 400 Personen zufällig ausgweählt und befragt. Das Waschmittel war bei 30\% der Befragten bekannt.
+%\subparagraph{Erstellen eines zentralen 95\%-Konfidenzintervall für $\Theta$}
+%TODO Folie 15 Schätzverfahren ausrechnen
+%-----------------------------------------------------------------------------------------------------------------------------------------------
+\pagebreak
+\paragraph{Beispiel} Einer Lieferung von 1000 Paketen Zucker ist mit einer 95\% Konfidenz bei einem Fehler von $e=0.2\text{g}$ zu untersuchen, ob bei einer bekannten Standardabweichung von 1.2g der garantierte Mittelwert eingehalten wird. Wie viele Proben sind aus der Lieferung mindestens zu entnehmen?
+\begin{itemize}
+\item $Z$ aus Tabelle der Standardnormalverteilung: 1.96
+\item Aus \autoref{eq:schätzverfahren:2} folgt: 
+\begin{equation*}
+\begin{array}{rcl}
+ n&\geq&\frac{1.96^2\cdot1000\cdot1.2^2}{0.2^2\cdot(1000-1)+1.96^2\cdot1.2^2}  \\
+ n&\geq&121.6 
+\end{array}
+\end{equation*}
+\end{itemize}

@@ -1,0 +1,67 @@
+\subsection{Testverfahren}
+\subsubsection{Parametertest}
+Eine Autozeitschrift möchte wissen, ob der Benzinverbrauch eines bestimmten Autotyps $\mu=\frac{10l}{100km}$ und mit $\sigma=\frac{1l}{100km}$ eingehalten wird. Dazu sollen 25 Autos untersucht werden.\\
+Als Nullhypothese $H_0$ geht man davon aus, dass die Angabe stimmt.\\
+Bestimmen des Stichprobenmittels der 25 Testfahrzeuge:
+\begin{itemize}
+\item einmal $\frac{10.2l}{100km}$ 
+\item einmal $\frac{10.4l}{100km}$
+\end{itemize}
+Die Frage ist: 
+\begin{itemize}
+\item liegt iene systembedingte Störung und der angegebene Mittelwert ist falsch oder
+\item liegt das Ergebnis im Bereich der statistischen Schwankungen (Toleranz)
+\item Die Frage kann über das Vertrauensintervall beantwortet werden (\autoref{eq:parameter:1})
+\end{itemize}
+Mit den gegebenen Werten füllen wir die \autoref{eq:parameter:1} aus: $\mu_{0}=10, \sigma=1, n=25, 1-\alpha=0.95$
+\begin{equation*}
+10-1.96\frac{1}{\sqrt{25}}\leq\overline{x}\leq10+1.96\frac{1}{\sqrt{25}}
+\end{equation*}
+Unter der gegebenen Wahrscheinlichkeitsangabe würde die Nullhypothese mit dem Stichprobenmitel von 10.2 noch angenommen und der Unterschied als statistische Schwankung akzeptiert. Hingegen wird das Stichprobenmittel von 10.4 als signifikante Abweichung betrachten und somit die Nullhypothese zurückgewiesen. Der mögliche Fehler liegt bei $2.5\%$.
+\subsection{Unabhängigkeitstest}
+Ein Unternehmen stellt ein Produkt in vier Zweigwerken her. Je nach erreichter Qualität wird ein Produkt in eine von 3 Qualitätstufen eingeordnet. Es soll mittels einer Stichprobe von 500 Stück untersucht werde, ob zwischen der Qualität der Produkte und den Zweigwerken, in denen sie hergestellt werden, ein Zusammenhang beziehungsweise Abhängigkeit besteht\\
+\begin{table}[htb]
+\centering
+\begin{tabular}{@{}lllll@{}} \toprule
+ & \multicolumn{4}{l}{Qualitätsstufe} \\
+\multirow{-2}{*}{Zweigwerk} & 1 & 2 & 3 & Summe \\ \midrule
+1 & 125 & 25 & 10 & \cellcolor[HTML]{FFFC9E}160 \\
+2 & 75 & 20 & 10 & \cellcolor[HTML]{FFFC9E}105 \\
+3 & 60 & 25 & 15 & \cellcolor[HTML]{FFFC9E}100 \\
+4 & 75 & 40 & 20 & \cellcolor[HTML]{FFFC9E}135 \\
+Summe & \cellcolor[HTML]{FFFC9E}335 & \cellcolor[HTML]{FFFC9E}110 & \cellcolor[HTML]{FFFC9E}55 & \cellcolor[HTML]{FFFC9E}500 \\ \bottomrule
+\end{tabular}
+\end{table}
+Die Randhäufigkeiten sind gelb markiert. 
+\begin{enumerate}[label=\arabic* \bfseries Schritt:]
+\item Signifikanzzahl 0.01 festgelegt. \\
+Freiheitsgrade sind: 3 Qualitätsstufen $3-1=2$ und 4 Zweigwerke $4-1=3$. Multipliziert ergibt das, dass es 6 Freiheitsgrade gibt.
+\item Der Testwert $y$ berechnet sich auch hier als Summe der quadrierten Differenzen zwischen tatsächlicher und erwarteter Häufigkeit jeweils dividiert durch die erwartete Häufigkeit. Die erwartete Häufigkeit ermittelt man durch die Randverteilung:
+\begin{equation*}
+\ra{1.5}
+\begin{array}{rcl}
+ \frac{h_{32}^{th}}{100}&=&\frac{110}{500}  \\
+ h_{32}^{th}&=&\frac{110\cdot100}{500} \\
+ h_{32}^{th}&=&22
+\end{array}
+\end{equation*}
+Die Zahlen werden durch die Randhäufigkeiten in der Tabelle entnommen. $500$ ist die Summe aller Randhäufigkeiten, $100$ die Summe aus der Zeile 3, $110$ die Summe aus der Spalte 2, daher auch $h_{32}^{th}$
+\item Daraus ergibt sich, mit Vorlage aus \autoref{eq:testverfahren:verteilung1}:
+\begin{equation*}
+ y=\frac{(125-107.2)^2}{107.2} + \frac{(25-35.2)^2}{35.2}+ \ldots + \frac{(20-14.85)^2}{14.85} = 20.72
+\end{equation*}
+Daraus ergibt sich eine Tabelle mit neuen Werten.
+\begin{table}[htb]
+\centering
+\begin{tabular}{@{}lllll@{}} \toprule
+\multicolumn{1}{c}{\multirow{2}{*}{Zweigwerk}} & \multicolumn{4}{c}{Qualitätsstufe} \\
+\multicolumn{1}{c}{} & 1 & 2 & 3 & Summe \\ \midrule
+1 & 107.2 & 35.2 & 17.6 & 160 \\
+2 & 70.35 & 23.1 & 11.55 & 105 \\
+3 & 67 & 22 & 11 & 100 \\
+4 & 90.45 & 29.7 & 14.85 & 135 \\
+Summe & 335 & 110 & 55 & 500 \\ \bottomrule
+\end{tabular}
+\end{table}
+\end{enumerate}
+$C_0$ aus der Tabelle ist $15.086 < 20.72$. Die Hypothese wird abgelehnt, die Ergebnisse der Zweigwerke sind nicht unabhängig.
