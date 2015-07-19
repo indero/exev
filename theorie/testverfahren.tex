@@ -3,17 +3,29 @@
 Im Testverfahren erhält man mit einer vorgegebenen Wahrscheinlichkeit von mindestens $1-\alpha$ auf Grund einer Stichprobe ein Intervall $[a,b]$, das einen unbekannten Parameter $v$ enthält, so heisst dieses Intervall für $v$ bei einem Vertrauensniveau von $1-\alpha$
 \end{tcolorbox}
 $\alpha$ wird in diesem Zusammenhang auch als Signifikanzzahl bezeichnet und ist ein Mass für die Irrtumswahrscheinlichkeit. Das heisst die Null-Hypothese abzulehnen, obwohl sie richtig ist. Damit hat man auch eine Aussage über die Wahrscheinlichkeit eines Fehlers.
+\pagebreak[4]
 \subsubsection{Fehler erster Art}
 Der Fehler ersten Art, bedeutet fehlerhaftes Ablehnen einer Hypothese. Liegt der ermittelte Wert ausserhalb des Annahmebereichs, so wird die Hypothese verworfen. Die Wahrscheinlichkeit, dass die Hyptohese fälschlicherweise verworfen wird, wird durch die Fläche unter der Verteilungsfunktion ausserhalb des Annahmebereichs repräsentiert und lässt sich bestimmen als $\alpha$.
-(BILD Folie 6)
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.25]{images/exev_testverfahren_fehlerart_1.png}
+\caption{Fehler ersten Art}
+\label{fig:testverfahren:fehler1}
+\end{figure}
 \subsubsection{Fehler zweiter Art}
 Der Fehler der zweiten Art, bedeutet eine fehlerhaftes Annehmen einer Hypothese. 
-(BILD Folie 7)\\
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.25]{images/exev_testverfahren_fehlerart_2.png}
+\caption{Fehler zweiter Art}
+\label{fig:testverfahren:fehler2}
+\end{figure}
 Beim Aufstellen einer Hypothese kann es passieren, dass diese nicht komplett der Wahrheit entspricht. Der Fehler der Hypothese und der Wahrheit wird als Fehler $\beta$ durch die Fläche von $\infty$ bis an das Ende der Annahme angegeben.
 \subsubsection{Fallunterscheidungen}
 Man kann unter verschiedenen Fällen unterscheiden. Unter anderem:
 \begin{itemize}
-\item Der/die interessierenden Parameter der Grundgesamtheit sind z.B als Erfahrungswert bekannt. Durch Stichproben soll überprüft werden, ob diese Werte noch eingehalten werden. \item Hypothesen basieren auf Sollwerten und Normen. Diese Werte müssen also durch Vorgaben eingehalten werden. es ist zu überprüfen, ob ein Standard eingehalten wird.
+\item Der/die interessierenden Parameter der Grundgesamtheit sind z.B als Erfahrungswert bekannt. Durch Stichproben soll überprüft werden, ob diese Werte noch eingehalten werden. 
+\item Hypothesen basieren auf Sollwerten und Normen. Diese Werte müssen also durch Vorgaben eingehalten werden. es ist zu überprüfen, ob ein Standard eingehalten wird.
 \item Hypothesen aufgrund einer Theorie oder auch auf Grund von Ergebnissen aus Simulationsläufen.
 \end{itemize}
 Ein statistischer Test ist eine Methoden, die eine Entscheidung ermöglichen soll. Deshalb braucht man ein bestimmtes Verfahren, um Hypothesen zu testen.
@@ -44,10 +56,10 @@ Diese können analog zu den Paramtertests angewendet werden:
 \item Berechne die Annahmegrenzen 
 \end{enumerate}
 \begin{align}
-c_u &=& p_0 - z\sqrt{\frac{p_0(1-p_0)}{n}}&\quad\mbox{oder}\\
-c_u &=& p_0 - z\sqrt{\frac{p_0(1-p_0}{n}}\,\sqrt{\frac{N-n}{N-1}}&\quad\mbox{und}\\
-c_0&=&p_0 + z\sqrt{\frac{p_0(1-p_0)}{n}}&\quad\mbox{oder}\\
-c_0&=& p_0 + z \sqrt{\frac{p_0(1-p_0)}{n}}\,\sqrt{\frac{N-n}{N-1}}&
+c_u &= p_0 - z\displaystyle\sqrt{\frac{p_0(1-p_0)}{n}}&\quad\mbox{oder} \\
+c_u &= p_0 - z\displaystyle\sqrt{\frac{p_0(1-p_0}{n}}\,\sqrt{\frac{N-n}{N-1}}&\quad\mbox{und} \\
+c_0&=p_0 + z\displaystyle\sqrt{\frac{p_0(1-p_0)}{n}}&\quad\mbox{oder} \\
+c_0&= p_0 + z \displaystyle\sqrt{\frac{p_0(1-p_0)}{n}}\,\sqrt{\frac{N-n}{N-1}}&
 \end{align}
 \begin{enumerate}
   \setcounter{enumi}{2}

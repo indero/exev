@@ -8,13 +8,14 @@ Dem Erkennen des Zusammenhangs zwischen zwei oder meBhr Merkmalen kommt der betr
 \begin{tcolorbox}[colback=green!5,colframe=green!40!black, title=Abhängigkeit]
 Zwei Merkmale sind statistisch unabhängig, wenn der Wert des einen Merkmals nicht davon abhängt, welcher Wert das andere Merkmal besitzt. Sonst sind sie abhängig.
 \end{tcolorbox}
+\pagebreak[4]
 Zu unterscheiden sind dabei:
 \begin{itemize}
 \item Formale Abhängigkeit: 
 \subitem Liegt eine zahlenmässig begründete Abhängigkeit zwischen den Merkmalen vor?
-\item Sachliche Abhängigket?
+\item Sachliche Abhängigket
 \subitem Ist der Wert des einene Merkmals ursächlich für den Wert des anderen Merkmals? Die Feststellung der Kausalität bzw. der Ursache-Wirkungsbeziehung kann die Zusammenarbeit mit dem auf dem jeweiligen Sektor Fachkundigen erforderlich machen. Hier muss man sich aber vor "Unsinns-Korrelationen" in acht nehmen.
-%BEISPIEL Folie 5 -7
+%TODO BEISPIEL Folie 5 -7
 \end{itemize}
 Herausfinden ob eine Tabelle unabhängig ist
 \begin{equation}\label{eq:zusammenhang:1}
@@ -45,8 +46,8 @@ b_1 =& \frac{\sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}x_i^2-n
 \end{align}
 Analog folgt für:
 \begin{align}
-x=a_2+b_2y &\Longleftrightarrow& a_2=\overline{x}+b_2\overline{y}\\
-&\Longleftrightarrow& b_2 = \frac{\sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}y_i^2-n\overline{y}^2}
+x=a_2+b_2y &\Longleftrightarrow a_2=\overline{x}+b_2\overline{y}\\
+&\Longleftrightarrow b_2 = \frac{\sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}y_i^2-n\overline{y}^2}
 \end{align}
 %BEISPIEL Folie 10,11
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,8 +75,8 @@ Diese ist ein Mass für die Streuung der Merkmalsträger bzw. deren Merkmalswert
 %BILD
 Formel:
 \begin{align}
-\sigma_{XY}&=&\frac{1}{n}\sum_{i=1}^n (x_i-\overline{x})(y_i-\overline{y})\label{eq:regression:2}\\
-\sigma_{XY}&=&\frac{1}{n}\sum_{i=1}^n x_i y_i - \overline{xy}\label{eq:regression:3}
+\sigma_{XY}&=\frac{1}{n}\sum_{i=1}^n (x_i-\overline{x})(y_i-\overline{y})\label{eq:regression:2}\\
+\sigma_{XY}&=\frac{1}{n}\sum_{i=1}^n x_i y_i - \overline{xy}\label{eq:regression:3}
 \end{align}
 \item Normierung der Kovarianz\\
 Es entsteht der Korrelazionskoeffizient (Normiert wird auf den Wertebereich $[-1,1]$
@@ -95,9 +96,9 @@ Dabei ist $r$ positiv zu setzen, wenn beide Steigungsmasse positiv sind, oder ne
 \subsubsection{Interpretation des Korrelationskoeffizienten von Bravais Pearson}
 Der Korrelationskoeffizient r berechnet sich zu $r$.
 \begin{align}
-r&=\frac{\sigma XY}{\sigma X \sigma Y} =& \frac{\sum_{i=1}^n\left(x_i-\overline{x} \right )\left(y_i - \overline{y} \right )}{\sqrt{\left(\sum_i^n\left(x_i - \overline{x}\right)^2 \right )\left(\sum_i^n\left(y_i - \overline{y} \right )^2 \right )}}\\
-b_1 &=& \frac{\sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}^n x_i^2 - n\overline{x}^2}&\\
-b_2 &=& \frac{\sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}^n y_i^2 - n\overline{y}^2}&
+r=\frac{\sigma XY}{\sigma X \sigma Y} &= \frac{\sum_{i=1}^n\left(x_i-\overline{x} \right )\left(y_i - \overline{y} \right )}{\sqrt{\left(\sum_i^n\left(x_i - \overline{x}\right)^2 \right )\left(\sum_i^n\left(y_i - \overline{y} \right )^2 \right )}}\\
+b_1 &=\frac{\sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}^n x_i^2 - n\overline{x}^2}\\
+b_2 &= \frac{\sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}^n y_i^2 - n\overline{y}^2}
 \end{align}
 \begin{itemize}
 \item bei positivem $r$ ist der lineare Zusammehang der Merkmale $X$ und $Y$ positiv, bzw gleichläufig

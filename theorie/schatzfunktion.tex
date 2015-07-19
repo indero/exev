@@ -24,9 +24,11 @@ Konstruktion dieser Funktion:
 Zuerst minimiert man die Summe des Schätzwertes \autoref{eq:goodcriteria:1}, danach differenziert man nach $\mu = 0$ und erhät die Schätzfunktion zu \autoref{eq:goodcriteria:2}. \\
 Das Ziel des Schätzverfahrens ist, von einer Stichprobe auf eine Grundgesamtheit zu schliessen und den Fehler einer falschen Schätzung zu minimieren oder zu bestimmen.\\
 Hierbei wird zwischen zwei Schätzverfahren:
+\pagebreak[4]
 \begin{itemize}
 \item Punktschätzung
 \subitem Für die Simulation untersuchen wir hier die Parameterschätzung für den Mittelwert $\mu$, die Varianz $\sigma^2$ und für unbekannte Wahrscheinlichkeiten $p$ (auch Anteilswerte genannt).
+\nopagebreak[4]
 \item Intervallschätzung
 \subitem Hier geht es um die Bestimmung von Vertrauensinvervallen für die oben aufgeführten Parameter und das damit verbundene Risiko einer Fehleinschätzung oder Fehlinterpretation. Die Angabe des Fehlers oder der Genauigkeit einer Schätzung wird auch als ihre Zuverlässigkeit bezeichnet.
 \end{itemize}
@@ -130,7 +132,7 @@ n \geq \frac{Z^2\sigma^2}{e^2}
 \end{equation}
 %Beispiel Folie 17
 Bei der Berechnung des notwendigen Stichprobenumfangs für die Intervallschätzung ohne Zurücklegen, muss man anders vorgehen. Mit dem bekannten Korrekturfaktor aus \autoref{eq:schatzverfahren:fehler1}, erhält man
-\begin{equation}
+\begin{equation}\label{eq:schätzverfahren:2}
 n \geq \frac{z^2 N \sigma^2}{e^2(N-1)+z^2\sigma^2}
 \end{equation}
 %Beispiel Folie 19
@@ -140,7 +142,7 @@ Für die Schätzfunktion galt \autoref{eq:goodcriteria:1} und \autoref{eq:goodcr
 s^2=\frac{\sigma^2}{n-1}\sum^n_{i=1}Z_i^2& \\
 \sum_{i=1}^n Z_i^2& = \frac{s^2(n-1)}{\sigma^2}
 \end{align}
-Die Chi-Quadrat Verteilung war in \autoref{eq:chisqare:1} angegeben. Das heisst die Zufallsvariable $Y$ in der die zu schäzende Varianz der Grundgesamtheit einfliesst, ist Chi-Quadrat-verteilt mit $r=n-1$ Freiheitsgraden.
+Zur berechnung eines asymmetrischen Konfidenzintervall, beispielsweise durch die Chi-Quadrat Verteilung, in \autoref{eq:chisqare:1} angegeben. Das heisst die Zufallsvariable $Y$ in der die zu schäzende Varianz der Grundgesamtheit einfliesst, ist Chi-Quadrat-verteilt mit $r=n-1$ Freiheitsgraden.
 \begin{align}
 W\left(y_{\frac{\alpha}{2}} \leq \frac{(n-1)s^2}{\sigma^2} \leq y_{1-\frac{\alpha}{2}}\right)\\
 W\left(\frac{(n-1)s^2}{y_{1-\frac{\alpha}{2}}} \leq\sigma^2 \leq\frac{(n-1)s^2}{y_{\frac{\alpha}{2}}}\right)
