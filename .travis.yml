@@ -1,3 +1,4 @@
+sudo: required
 script:
 - mkdir _build
 - pdflatex -output-directory _build -jobname=exev main.tex
@@ -5,9 +6,7 @@ deploy:
   provider: releases
   api_key:
     secure: "CDpgGzmYLF65YZPelkY94rTr5z2Fy7t3NppwmWJRB0yRZyqfXAk0N8VbNa9gf5fIU6VoGXvjKdX7wSK4ra9OBHIkndk2RtiFsVWFJ67sqb5znkHlYL7EefCkjwoVdlTWXx/PQoyvfhRXZP3qTZ6JBEyBnDnSOV0K5Y/nC96WPYoHcfXgTiIQ30v9xqGFl/jV6Btf7OPWpOMmTIJkeo6lwSgoKdRDcGcDPSUaA6mc/IplC/27HURpf/AHQwfxOcFH7bBqt1ZLPkVbMxL3XISgQ0UqA+fX4dEUQXl79Tefbq4KP0dpO9HGp9husglek240cbPIJLsS58v0UNZfAA8IoHW/VRMSh0zOFH/fadsM6WCpLlblWcWbRXNq8evCTPD2HHkbB7c739A0i72lknbzBiWrrd9FuHZSQrMBVLQ67w9m2aatMimWbtoLNU/z3+N8TThltdaAkAB8E+bbPQ8i0RluGAz+p5y6J9PVAV5C9RxxHeB1mGaPZ6VooM8iqb0nfxHwVMn2voRyxBylaTiEK6QKbie6q1+lbpGFHdic+CYDpN0rFGMTzHlELGAF3ECenBGxYJmRXYrh4Yd9nYrqRvFH3LA6noUb7WumAaWQjK6wO+5wAVymszsEO35nuUcYWmsAm5mfXPpYDjHuS90yEHl6+QDmqWWQp+RccXFeky8="
-  file:
-  - _build/exev.pdf
+  file:  _build/exev.pdf
   skip_cleanup: true
   on:
     tags: true
-sudo: required
