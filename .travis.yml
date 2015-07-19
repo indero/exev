@@ -1,7 +1,15 @@
-sudo: required
+language: ruby
+
 script:
 - mkdir _build
 - pdflatex -output-directory _build -jobname=exev main.tex
+
+before_install:
+- curl -L https://raw.githubusercontent.com/krlmlr/texlive-squashfs/master/out/texlive.tar.xz | tar xJC ~  
+
+install: 
+- PATH=$HOME/texlive/bin/x86_64-linux:$PATH
+
 deploy:
   provider: releases
   api_key:
