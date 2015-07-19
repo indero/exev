@@ -1,0 +1,153 @@
+\subsection{Schätzfunktion}
+\subsubsection{Problembeschreibung}
+Bisher sind wir davon ausgegangen, dass die Parameter $\mu$ und $\sigma$ und die Verteilungsfunktion $f$ bekannt sind.\\
+Diese Annahme ist zulässig, wenn sehr viele Ergebnisse von Messungen oder Experimenten vorhanden sind. Experimente sind jedoch teuer, Zeit und Ressourcenintensiv. Es ist daher so, dass man die Anzahl der Experimente zu minimieren versucht. \textit{Mit dieser Fragestellung beschäftigt sich das DoE (Design of Experiments)}\\
+Letzlich müssen die Parameter oft geschätz werden. Damit man nicht blind raten muss, werden Schätzverfahren, Schätzfunktion und Gütekriterien für die Schätzfunktion definiert.
+\begin{itemize}
+\item Schätzverfahren:
+\subitem Haben die Aufgabe, den oder die unbekannten Parameter der Verteilung eines Merkmals in der Grundgesamtheit anhand einer Stichprobe zu schätzen.
+\subitem Die Schätzung kann durch die Angabe eines einzigen Wertes erfolgen (Punktschätzung) oder durch Angabe eines Intervalls (Invervallschätzung).
+\item Schätzfunktion:
+\subitem Ist ein mathematischen Instrument und ordnet einer konkreten Stichprobe einen Wert zu. Sie stellt somit ein Bindeglied zwischen der Grundgesamtheit und der Stichprobe dar. Sie bildet die Beziehung zwischen den Parametern der Schätzfunktion und den entsprechenden Parametern in der Grundgesamtheit bekannt. Dabei ist die Verteilung der Schätzfunktion zumindest approximativ bekannt. So wird der Rückschluss von der Stichprobe auf die Grundgesamtheit möglich. Es erlaubt auch die Angabe des Fehlerrisikos.
+\end{itemize}
+\subsubsection{Gütekriterien für Schätzunktionen}
+Ein Gütekriterium ist die quadratische Abweichung von Schätzfunktionen $\widehat{T}$ und Parameter $T$. Abweichung vom Schätz- oder Basiswertes $\widehat{T}$ vom Wert des Parameters der Grundgesamtheit $T$.
+\begin{equation}
+E[(\widehat{T}-T)^2] = Var(\widehat{T} + [E[\widehat{T}]-T]^2
+\end{equation}
+$Var[\cdot]$ ist die Varianz der Schätzfunktion, $[E[\widehat{T}]-T]^2$ ist die quadrierte Abweichung von der Schätzfunktion $T$ und Parameter $T$ der Grundgesamtheit. Ist $E(\widehat{T})-T=0$ ist es Erwartungstreu.
+Konstruktion dieser Funktion:
+\begin{align}
+\sum_{i=1}^n(x_i-\widehat{\mu})^2 \label{eq:goodcriteria:1} \\
+\widehat{\mu}=\frac{1}{n}\sum_{i=1}^n x_i = \overline{x} \label{eq:goodcriteria:2}
+\end{align}
+Zuerst minimiert man die Summe des Schätzwertes \autoref{eq:goodcriteria:1}, danach differenziert man nach $\mu = 0$ und erhät die Schätzfunktion zu \autoref{eq:goodcriteria:2}. \\
+Das Ziel des Schätzverfahrens ist, von einer Stichprobe auf eine Grundgesamtheit zu schliessen und den Fehler einer falschen Schätzung zu minimieren oder zu bestimmen.\\
+Hierbei wird zwischen zwei Schätzverfahren:
+\begin{itemize}
+\item Punktschätzung
+\subitem Für die Simulation untersuchen wir hier die Parameterschätzung für den Mittelwert $\mu$, die Varianz $\sigma^2$ und für unbekannte Wahrscheinlichkeiten $p$ (auch Anteilswerte genannt).
+\item Intervallschätzung
+\subitem Hier geht es um die Bestimmung von Vertrauensinvervallen für die oben aufgeführten Parameter und das damit verbundene Risiko einer Fehleinschätzung oder Fehlinterpretation. Die Angabe des Fehlers oder der Genauigkeit einer Schätzung wird auch als ihre Zuverlässigkeit bezeichnet.
+\end{itemize}
+\begin{itemize}
+	\item Mittelwert $\mu$: 
+	\begin{equation}
+	\overline{x} = \frac{1}{n}\displaystyle\sum^{n}_{i=1} x_i
+	\end{equation}
+	\item Varianz $\sigma^{n}$: 
+	\begin{equation}
+	s^{2}=\frac{1}{n-1} \displaystyle\sum_{i=1}^{n}(x_i - \overline{x})^{2}
+	\end{equation}
+	Die Varianz der Stichprobe ist abhängig von n und damit nicht Erwartungstreu. Daher wird hier die Korrektur ($n-1$) vorgenommen. Für grosse Stichproben spielt das aber keine Rolle.
+	\item Anteilswert/Wahrscheinlichkeit p: 
+	\begin{eqnarray}
+	\overline{p} = \frac{k}{n}
+	\end{eqnarray}
+	 Wobei k = gute Fälle sind, und n = Stichprobenumfang
+\end{itemize}
+
+Die Verteilungsformen für das Stichprobenmittel $\overline{X}$:
+\begin{table}[ht]
+\ra{2}
+\centering
+\begin{tabular}{@{}l|ll@{}}
+\toprule
+Verteilung des Merkmals X & Varianz bekannt & Variant unbekannt \\ \midrule
+Bekannt und normalverteilt & $\overline{X}$ ist normalverteilt & X ist t-verteilt \\ 
+Bekannt und nicht normalverteilt & \multicolumn{2}{l}{\multirow{2}{*}{$X$ ist approximativ normalverteilt}} \\
+Unbekannt & \multicolumn{2}{l}{} \\ \bottomrule
+\end{tabular}
+\end{table} \\
+\subsubsection{Varianzen für die Schätzfunktion}
+\begin{itemize}
+\item Verteilungsformen für das Stichprobenmittel $\overline{X}$
+\begin{table}[h]
+\ra{2.5}
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+Stichprobe & Varianz $\sigma^2$ bekannt & Varianz $\sigma^2$ unbekannt \\ \midrule
+Ohne Zurücklegen $\frac{n}{N}<0.05$ & $\displaystyle\sigma_{\overline{X}}^2\approx\frac{\sigma}{n}$ & $\displaystyle\widehat{\sigma}_{\overline{X}}^2\approx\frac{s^2}{n}$ \\ 
+Mit zurücklegen $\frac{n}{N} \geq 0.05$ & $\displaystyle\sigma_{\overline{X}}^2=\frac{\sigma^2}{n}\cdot\frac{N-n}{N-1}$ & $\displaystyle\widehat{\sigma}_{\overline{X}}^2 =\frac{s^2}{n}\cdot\frac{N-n}{n}$ \\ \bottomrule
+\end{tabular}
+\end{table}
+Hinweis: Das Sigma beinhaltet keinen Bruch: $\sigma_{\overline{X}}^2$
+\item Varianzen der Schätzfunktion $\overline{X}$
+\newpage
+\subsubsection{Erstellen des Konfidenzintervalls}
+\begin{enumerate}
+	\item Feststellung der Verteilungsform von $\overline{X}$
+	\item Feststellung der Varianz von $\overline{X}$ ggf. schätzen mit $s^2$
+	\item Ermittlung des Quantislwertes $z$ oder $t$
+	\item Berechnung des maximalen Schätzfehlers. \emph{Der maximale Schätzfehler ist das Produkt aus Quantilswert und Standartabweichung von $X$}
+	\item Ermittlung der Konfidenzgrenzen \emph{Die untere und obere Konfidenzgrenze ergeben sich durch Substraktion bzw. Addition des maximalen Schätzfehlers vom bzw. zum Stichprobenmittel $X$}
+\end{enumerate}
+% Beispiel Folie 12
+\item Die Varianzen der Schätzfunktion $P$ ergeben sich aus
+\begin{equation}
+P=\frac{k}{n} = \theta
+\end{equation}
+Für $nP(1-P) > 9$ = appriximativ normalverteilt.
+\begin{table}[ht]
+\ra{2}
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+Stichprobe & Varianz bekannt & Varianz unbekannt \\ \midrule
+Mit Zurücklegen & $\sigma {2 \atop \overline{P}} = \frac{\theta(1-\theta)}{n}$ & $\widehat{\sigma}{2 \atop P} = \frac{P(1-P)}{n}$ \\
+$\frac{n}{N}< 0.05$ & $\sigma {2 \atop \overline{P}} \approx \frac{\theta(1-\theta)}{n}$ & $\widehat{\sigma}{2 \atop P}\approx\frac{P(1-P)}{n}$ \\
+$\frac{n}{N}\geq 0.05$ & $\sigma {2 \atop \overline{X}}=\frac{\theta(1-\theta)}{n}\cdot\frac{N-n}{N-1}$ & $\widehat{\sigma}=\frac{P(1-P)}{n}\cdot\frac{N-n}{N}$ \\ \bottomrule
+\end{tabular}
+\end{table}
+\end{itemize}
+In allen Tabellen dieses Kapitels gilt: $N$ ist die Grundmenge, $n$ die Grösse der Stichprobe und $\frac{N-n}{N-1}$ bzw. $\frac{N-n}{N}$ sind Korrekturfaktoren.\\
+Erstellen eines konfidenzienintervalls
+\begin{enumerate}
+\item Festellung der Verteilungsform von $P$, die Schätzfunktion ist approximativ normalverteilt wenn $n P(1-P)>9$
+\item Festellung der Varianz von $P$
+\item Ermittlung des Quantilwertes $z$
+\item Berechnung des maximalen Schätzfehlers
+\subitem Der maximale Schätzfehler ist das Produkt des Quantilwerts und Standardabweichung von $P$
+\item Ermittlung der Konfidenzgrenzen
+\subitem Die untere und die obere Konfidenzgrenze ergeben sich durch Sustraktion bzw. Addition des maximalen Schätzfehlers vom bzw. zum Stichprobenmittel $P$
+\end{enumerate}
+%Beispiel Folie 15
+\subsubsection{Berechnung Stichrpobenumfangs grosser Grundgesamtheiten}
+Die Berechnung des notwendigen Stichprobenumfangs für die Intervallschätzung mit Zurücklegen oder Grossergrundgesamtheit unterscheidet sich vom den vorherigen Beispielen. Bisher war die Frage: Wie gross ist das Vertraunsintervall bei einer gegebenen Anzahl von Stichproben:
+\begin{equation}\label{eq:stichprobenumfang:1}
+-W\left(\mu - z \frac{\sigma}{\sqrt{n}}\leq \overline{x}\leq \mu + z \frac{\sigma}{\sqrt{n}}\right)=1-\alpha
+\end{equation}
+Jetzt soll ein maximaler Fehler vorgegeben werden
+\begin{align}
+\text{Fehler: }&\mu\pm e = \mu \pm z\frac{\sigma}{\sqrt{n}}\label{eq:schatzverfahren:fehler1} \\ 
+\text{Wahrscheinlichkeit: }&1-\alpha\\
+\text{Vorgabe: }&e\leq\pm z\frac{\sigma}{\sqrt{n}}
+\end{align}
+Daraus folgt bei vorgegebener Wahrscheinlichkeit $1-\alpha$ zur Bestimmung des $Z$-Wertes der Standartnormalverteilung
+\begin{equation}
+n \geq \frac{Z^2\sigma^2}{e^2}
+\end{equation}
+%Beispiel Folie 17
+Bei der Berechnung des notwendigen Stichprobenumfangs für die Intervallschätzung ohne Zurücklegen, muss man anders vorgehen. Mit dem bekannten Korrekturfaktor aus \autoref{eq:schatzverfahren:fehler1}, erhält man
+\begin{equation}
+n \geq \frac{z^2 N \sigma^2}{e^2(N-1)+z^2\sigma^2}
+\end{equation}
+%Beispiel Folie 19
+\subsubsection{Konfidenzinterfall für die Varianz}
+Für die Schätzfunktion galt \autoref{eq:goodcriteria:1} und \autoref{eq:goodcriteria:2}, sind die $X_i$ normalverteilt gilt:
+\begin{align}
+s^2=\frac{\sigma^2}{n-1}\sum^n_{i=1}Z_i^2& \\
+\sum_{i=1}^n Z_i^2& = \frac{s^2(n-1)}{\sigma^2}
+\end{align}
+Die Chi-Quadrat Verteilung war in \autoref{eq:chisqare:1} angegeben. Das heisst die Zufallsvariable $Y$ in der die zu schäzende Varianz der Grundgesamtheit einfliesst, ist Chi-Quadrat-verteilt mit $r=n-1$ Freiheitsgraden.
+\begin{align}
+W\left(y_{\frac{\alpha}{2}} \leq \frac{(n-1)s^2}{\sigma^2} \leq y_{1-\frac{\alpha}{2}}\right)\\
+W\left(\frac{(n-1)s^2}{y_{1-\frac{\alpha}{2}}} \leq\sigma^2 \leq\frac{(n-1)s^2}{y_{\frac{\alpha}{2}}}\right)
+\end{align}
+Anmerkung zu diesen Funktionen:
+\begin{itemize}
+\item Anstatt $r$ wird für den Freiheitsgrad oft auch $k$ verwendet
+\item Die $y$-Werte (Quantilswerte für $\frac{\alpha}{2}$ bzw. $1-\frac{\alpha}{2}$ bei $r$ Freiheitsgraden) sind der Tabelle der Chi-Quadrat Verteilung zu entnehmen
+\end{itemize}
+%Beispiel Folie 22

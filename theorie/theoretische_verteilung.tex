@@ -1,0 +1,100 @@
+\subsection{Theoretische Verteilungen}
+%Folie 15 - 19
+\subsubsection{Binominal-Verteilung}
+Anwendung findet dies wenn sich beispielsweise ein Zufallsexperiment nur in zwei Ergebnissen unterscheidt, das Experiment n-mal wiederholt wird (Zufallsstichprobe vom Umfang n). Gesucht ist meist die Wahrscheinlichkeit, dass bei n-maliger Durchführung des Experimentes das Ereignis: genau, mindistens oder höchstens x-mal Eintrifft.
+\begin{itemize}
+	\item Wahrscheinlichkeitsfunktion: 
+	\begin{equation}
+	f(x)=P(X=x)={n \choose x}p^{x}(1-p)^{n-x}
+	\end{equation}
+	\item Erwartungswert: 
+	\begin{equation}
+	E(X) = n\cdot p
+	\end{equation}
+	\item Varianz
+	\begin{equation}
+	Var(X) = n\cdot p(1-p)
+	\end{equation}
+\end{itemize}
+\subsubsection{Poisonverteilung}
+Diese Verteilung wird angewendet, wenn man sich dafür interessiert, wie hoch die Wahrscheinlichkeit ist, dass das Ergebnis $E$ in einem Intervall genau oder höchstens x-mal eintritt, wenn bekannt ist, dass in diesem Intervall das Ereignis im Mittel $\mu$-mal auftritt. $\mu$ gibt eine Rate pro Zeitintervall an.
+\begin{itemize}
+	\item Wahrscheinlichkeitsfunktion:
+	\begin{equation}
+	f(x) = P(X=x) = \frac{\mu^{x}}{x!} e^{-\mu}
+	\end{equation}
+	$x$: Anzahl der Ereignisse z.B Ereignis $x$ tritt $1, 2, \ldots, n$-mal bei der Rate Beobachtungsintervall $\mu$ ein. 
+	\item Erwartungswert/Varianz
+	\begin{equation}
+	E(X) = Var(X)=\mu
+	\end{equation}
+\end{itemize}
+\subsubsection{Rechteckverteilung}
+Die Rechteckverteilung eignet sich zur Beschreibung von Vorgängen, bei denen die Ergebnisse nur Zahlen eines bestimmten Intervalls $[a, b]$ sein können. Die Wahrscheinlichkeit, dass ein Ergebnis in ein bestimmtes Teilintervall fällt, wird nur durch dessen Länge bestimmt. Alle Ergebnisse eine bestimmten Intervalls [a, b] sind gleich wahrscheinlich und daher auch die Gleichverteilung im Intervall [a, b].\\
+\textit{Hierzu gibt es keine Formeln}
+\subsubsection{Exponentialverteilung}
+Diese Verteilung wird angewendet, wenn man Beispielsweise die Zeitspanne zwischen zwei Anrufen in einer Telefonzentrale, die Dauer eines Telefongesprächs, die Lebensdauer eines Geräts (wenn Defekte durch äussere Einflüsse und nicht durch den Verschliess verursacht werden) ermitteln will.\\
+Exponentialverteilung mit Parameter $\lambda > 0$
+\begin{equation}
+f(t) = \left\{\begin{array}{l l} \lambda e^{-\lambda t}&, \mbox{für }t\geq 0\\ 0 &, \mbox{sonst}\end{array}\right.
+\end{equation}
+\begin{equation}
+F(x) = \left\{\begin{array}{l l} 1-e^{-\lambda x}&,\mbox{für $x\geq 0$}\\ 0 &,\mbox{für }x < 0\end{array}\right.
+\end{equation}
+\subsubsection{Weibull-Verteilung}
+Diese Verteilung wird Angewendet um die Lebensdauer von Geräten oder Materialien mit Abnutzungserscheinungen zu beschreiben. $\alpha$ ist ein Skalierungsparameter, $\beta$ ist ein Formparameter.
+\begin{equation}
+f(t)=\left\{\begin{array}{r l}\alpha \cdot \beta \cdot t^{\beta-1}e^{\alpha t^{\beta}}&, \mbox{für }t \geq 0\\0 &, \mbox{sonst}\end{array}\right.
+\end{equation}
+\begin{equation}
+F(x)=\left\{\begin{array}{r l} 1-e^{-\alpha x^{\beta}}&, \mbox{für }x\geq 0 \\ 0&, \mbox{für }x<0\end{array}\right.
+\end{equation}
+Interpretation des Formparameters $\beta > 0$
+\begin{itemize}
+	\item $\beta < 1$: Ausfallrate nimmt mit der Zeit ab (Ausfälle finden frühzeitig statt)
+	\item $\beta = 1$: Ausfallrate konstant (zufällige äussere Einflüsse sind Ursache des Versagens)
+	\item $\beta > 1$: Ausfallrate nimmt mit der Zeit zu (Alterungsprozesse)
+\end{itemize}
+Bemerkung: Der Parameterwert $\beta = 1$ führt auf die Exponentialverteilung welche somit einen Spezialfall der Weibull-Verteilung darstellt.
+\subsubsection{Normalverteilung}\label{theorie:normalverteilung}
+Die Normalverteilung ist die wohl wichtigste stetige Verteilung und spielt neben andrem in der schliessenden Statistik eine entscheidende Rolle. Der zentrale Grenzwertsatz besagt z.B: Dass sich eine Zufallsvariable $X$, die sich als Summe der $n$ Zufallsvariablen $X_1, X_2, \ldots, X_n$ ergibt, nähreungsweise normalverteilt ist, wenn die Anzahl der Zufalls-variablen hinreichend gross ist, die Zufallsvariablen $X_1, X_2,\ldots , X_n$ unabhängig sind oder nicht eine der Zufallsvariablen $X_1, X_2, \ldots ,X_n$ stark dominant ist (sehr salopp formuliert).
+%TODO 5-Folie 36 Fehlende Formel
+\begin{itemize}
+	\item Wahrscheinlichkeitsdichtverteilung
+	\begin{equation}
+	f(x) == \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}^{2}\right)}\, , \sigma > 0
+	\end{equation}
+	\item Verteilungsfunktion:
+	\begin{equation}
+	F(x) = \int\limits_{-\infty}^{x}\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{t-\mu}{\sigma}\right)^2}\mathrm{d}t\, ,\sigma > 0
+	\end{equation}
+	Dieses Integral lässt sich leider nicht lösen Das bedeutet, dass wir keine Stammfunktion finden.
+	\item Erwartungswert
+	\begin{equation}
+	E(X) = \mu
+	\end{equation}
+	\item Varianz
+	\begin{equation}
+	Var(X) = \sigma
+	\end{equation}
+\end{itemize}
+Die Normalverteilung ist eine stetige symmetrische Verteilung. Das Maximum der Dichteverteilung liegt bei $x_{max}=\mu$. Die Wendepunkte liegen bei $x_w=\mu\pm\sigma$. Die Verteilungsfuntkon mit den Werten $\mu=0$ und $\sigma=1$ wird als Standart-Normalverteilung bezeichnet. $N(0;1)=F_0(x)$.
+\begin{equation}
+z=\frac{x-\mu}{\sigma}
+\end{equation}
+Zwischen einer Verteilungsfunktion $F(X)$ und einer Standartnormalverteilung gibt es die folgende Beziehung.
+\begin{equation}
+F(x)=F_0\left(\frac{x-\mu}{\sigma}\right)
+\end{equation}
+Daher reicht es aus, nur die Standartnormalverteilung zu kennen,diese wird in Tabellen angegeben.
+%Beispiele
+\subsubsection{Simulation und Zufallsvariable}
+In einem dynamischen Simulationsexperiment:
+\begin{itemize}
+\item Werden Ereignisse (Events) zu zufälligen Zeiten erzeugt oder zerstört
+\item Unterliegen Bearbeitungszeiten stochastischen Schwankungen
+\item Sind Entscheidungen im Event-Flow zufällig
+\item schwankungen Mengenangaben von Gütern, Nachfragen, Ressourcen etc.
+\item Die Beschreibung dieser scheinbar zufälligen Prozesse erfolgt durch die Definition geeigneter Zufallsvariablen
+\end{itemize}
+%Definitionen der Verteilungen Folie 45

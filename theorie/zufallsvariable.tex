@@ -1,0 +1,28 @@
+\subsection{Zufallsvariable}
+Die Zufallsvariable lässt sich als \textit{Funktion} darstellen, die bei jedem Ergebnis eines Zufallsexperiments einen Wert (Realisierung) zuordnet. Zur Beschreibung stochastischer Phänomene sind Grössen (Variablen) zu betrachten, deren Werte vom Zufall beeinflusst werden. Beispiel eines Münzwurfs
+\begin{equation}
+X: \{\mbox{Wappen, Zahl}\}\rightarrow \mathbb{R},\, X(\omega) = \left\{\begin{array}{r l}1&,  \mbox{falls }\omega=\mbox{Wappen}\\-1&, \mbox{falls }\omega=\mbox{Zahl}\end{array}\right.
+\end{equation}
+Gegeben sei ein Wahrscheinlichkeitsaum ($\Omega, \mathcal{A}, P$).
+\begin{itemize}
+	\item Wahrscheinlichkeitsmass $P$ ordnet jedem Ergebnis $A \in\mathcal{A}$ seine Wahrscheinlichkeit zu:
+	\begin{equation}
+	P: \mathcal{A}\rightarrow [0, 1]
+	\end{equation}
+	\item Eine Zufallsvariable $X$ ordnet jedem Ergebniss $\omega \in \Omega$ einen Zahlenwert zu:
+	\begin{equation}
+	X:\Omega \rightarrow \mathbb{R}
+	\end{equation}
+\end{itemize}
+Um die Wahrscheinlichkeit dafür zu berechnen, dass die Zufallsvariable $X$ bestimmte Werte annimmt, benötigen wir eine Verbindung zum Wahrscheinlichkeitsmass $P$ und dem System der Ereignisse.
+\begin{tcolorbox}[colback=green!5,colframe=green!40!black, title=Definition der Zufallsvariable]
+Eine Funktion $X: \Omega \rightarrow \mathbb{R}$, die jedem Ereignis $\omega$ eines Ergenisraums $\Omega$ eine reele Zahl $x$ zuordnet, bildet eine Zufallsvariable, falls jedes Intervall $I\in \mathbb{R}$.\\
+Ist diese Teilmenge $A_i$ des Ergebnisraums $\omega$ ein \textbf{Element des Systems der Ereignisse} in einem Wahrscheinlichkeitsraum $(\omega, \mathcal{A}, P)$ so ist $P(A_i)$ die gesuchte Wahrscheinlichkeit
+\end{tcolorbox}
+%Beispiel Folie 7, 8
+\begin{equation}\label{eq:zufallsvariable:defin}
+A=\{\omega\in\Omega\vert X(\omega)\in I\}\in\mathcal{A}
+\end{equation}
+Das sich einstellende Ergebnis des Experiments hängt vom Zufall ab. Daher wird auch der ermittlete Zahlenwert $X(\omega)$ vom Zufall abhängen. Gesucht ist die Wahrscheinlichkeit dafür, dass $X(\omega)$ in einem bestimmten Intervall $I\subset \mathbb{R}$ liegt.\\
+Zu bestimmen ist die Menge der Ergebnisse, für die $X(\omega)\in I$ gilt. Gesucht ist die Teilmenge des Ergenisraums aus \autoref{eq:zufallsvariable:defin}.
+Für die Wahrscheinlichkeit des Ereignisses ${ \omega \in \Omega \vert X(\omega) \in I}$, schreiben wir abkürzend $P(X \in I)$ und entsprechend $P(a < X \leq b)$

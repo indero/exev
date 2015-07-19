@@ -1,0 +1,120 @@
+\subsection{Zusammenhang zwischen zwei Merkmalen}
+Dem Erkennen des Zusammenhangs zwischen zwei oder meBhr Merkmalen kommt der betrieblichen Praxis eine grosse Bedeutung zu. Bei der Untersuchung des Zusammenhangs zwischen zwei Merkmalen X und Y sind folgende Fragen interessant:
+\begin{itemize}
+\item Besteht ein Zusammenhang zwischen X und Y? (siehe \autoref{theorie:chiquadrat})
+\item Von welcher Form ist der Zusammenhang?
+\item Von welcher Stärke (Intensität) ist der Zusammenhang?
+\end{itemize}
+\begin{tcolorbox}[colback=green!5,colframe=green!40!black, title=Abhängigkeit]
+Zwei Merkmale sind statistisch unabhängig, wenn der Wert des einen Merkmals nicht davon abhängt, welcher Wert das andere Merkmal besitzt. Sonst sind sie abhängig.
+\end{tcolorbox}
+Zu unterscheiden sind dabei:
+\begin{itemize}
+\item Formale Abhängigkeit: 
+\subitem Liegt eine zahlenmässig begründete Abhängigkeit zwischen den Merkmalen vor?
+\item Sachliche Abhängigket?
+\subitem Ist der Wert des einene Merkmals ursächlich für den Wert des anderen Merkmals? Die Feststellung der Kausalität bzw. der Ursache-Wirkungsbeziehung kann die Zusammenarbeit mit dem auf dem jeweiligen Sektor Fachkundigen erforderlich machen. Hier muss man sich aber vor "Unsinns-Korrelationen" in acht nehmen.
+%BEISPIEL Folie 5 -7
+\end{itemize}
+Herausfinden ob eine Tabelle unabhängig ist
+\begin{equation}\label{eq:zusammenhang:1}
+h_{i,k}=\frac{h_i h_{i,k}}{n}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Regressionsanalyse}\label{theorie:regression}
+Die Regressionsanalyse beschreibt die Form bzw. Tendenz des Zusammenhangs durch eine mathematische Funktion. Durch sie werden die Wertkombinationen $(x,y)$ der Merkmalsträger in ein Koordinatensystem eingetragen, dann ergitb sich ein sogenanntes Streuungsdiagramm (Punktewolke). In der linearen Regressionsanalyse wird die Tendenz durch die Funktion bestimmt.\\
+%BILD Folien 8,9
+\begin{itemize}
+\item Bei einseitiger Beeinflussung (y wird nur durch den Parameter x bestimmt)
+\begin{equation}
+y=a_1+b_1\cdot \label{eq:depency:1}
+\end{equation}
+\item Bei wechselseitiger oder unbekannter Abhängigkeit zusätzlich \footnote{Achtung, dies ist keine Umkehrfunktion von \autoref{eq:depency:1}}
+\begin{equation}
+x=a_2+b_2\cdot y
+\end{equation}
+\end{itemize}
+Dabei müssen jedoch die Parameter $a$ und $b$ bekannt sein. Zur bestimmung dieser verwendet man kleine Quadrate. Die Aufgabe besteht darin, \autoref{eq:regression:1} zu minimieren. Dies erreicht man mit partiellem Ableiten des Ausdrucks nach $a$ und $b$, nullsetzen der beiden partiellen Ableitungen und auflösen der beiden Gleichungen nach $a$ und $b$. 
+\begin{equation}\label{eq:regression:1}
+\sum_i^n \left(y_i - a - bx_i\right)^2
+\end{equation}
+Dies ergibt:
+\begin{align}
+a_1 =& \overline{y} + b_1\overline{x} \label{eq:regression:4-1}\\
+b_1 =& \frac{\sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}x_i^2-n\overline{x}^2} \label{eq:regression:4-2}
+\end{align}
+Analog folgt für:
+\begin{align}
+x=a_2+b_2y &\Longleftrightarrow& a_2=\overline{x}+b_2\overline{y}\\
+&\Longleftrightarrow& b_2 = \frac{\sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}y_i^2-n\overline{y}^2}
+\end{align}
+%BEISPIEL Folie 10,11
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Korrelation}
+Die Korrelationsanalyse hat die Aufgabe:
+\begin{itemize}
+\item Die Stärke (Intensität) des Zusammenhangs festzustellen
+\item Wie ausgeprägt der Einfluss des einen Merkmals auf das andere Merkmal ist
+\item Zur Bewertung dieses Einflusses sind Kenngrössen zu entwickeln bzw. zu berechnen
+\end{itemize}
+Je nach Skalierungsgrad stehen verschiedene Verfahren zur Verfügung:
+\begin{enumerate}
+\item Sind beide Merkmale mindestens Intervallskaliert:
+\subitem Korrelationskoeffizienz von Bravais Pearson
+\item Ist ein Merkmal ordinalskaliert und das ander Merkmal mindestens ordinalskaliert:
+\subitem Rangkorrelationskoeffizient von Spearman
+\item Ist mindestens eines der beiden Merkmale Nominalskaliert:
+\subitem Kontingenzkoeffizienten und Assoziationsmasse
+\item Grundsätzlich können Skalierungsvoraussetzungen von den Merkmalen überfüllt sein, dies ist jedoch nicht ratsam, da das mit einem Informationsverlust verbunden ist.
+\end{enumerate}
+\subsubsection{Bravais Pearson}
+\begin{enumerate}[label=\bfseries \arabic*. Schritt: ]
+\item Kovarianz\\
+Diese ist ein Mass für die Streuung der Merkmalsträger bzw. deren Merkmalswertkombinationen $(x_i, y_i)$ um den Mittelpunkt oder Durchschnitt $(\overline{x}, \overline{y})$. Die Kovarianz erfolgt analog zu der, der Varianz
+%BILD
+Formel:
+\begin{align}
+\sigma_{XY}&=&\frac{1}{n}\sum_{i=1}^n (x_i-\overline{x})(y_i-\overline{y})\label{eq:regression:2}\\
+\sigma_{XY}&=&\frac{1}{n}\sum_{i=1}^n x_i y_i - \overline{xy}\label{eq:regression:3}
+\end{align}
+\item Normierung der Kovarianz\\
+Es entsteht der Korrelazionskoeffizient (Normiert wird auf den Wertebereich $[-1,1]$
+\begin{equation}
+r=\frac{\sigma_{XY}}{\sigma_X\sigma_Y}
+\end{equation}
+oder etwas ausführlicher
+\begin{equation}
+r=\frac{\sum_{i=1}^n(x_i-\overline{x})(y_i-\overline{y})}{\sqrt{(\sum_{i=1}^n(x_i-\overline{x})^2)(\sum_{i=1}^n (y_i-\overline{y})^2)}}
+\end{equation}
+Durch Umformung gilt
+\begin{equation}
+r=\sqrt{b_1 b_2}
+\end{equation}
+Dabei ist $r$ positiv zu setzen, wenn beide Steigungsmasse positiv sind, oder negativ wenn beide Steigungsmasse negativ sind. Dazu benötigen wir aber \autoref{eq:regression:2} und \autoref{eq:regression:3}
+\end{enumerate}
+\subsubsection{Interpretation des Korrelationskoeffizienten von Bravais Pearson}
+Der Korrelationskoeffizient r berechnet sich zu $r$.
+\begin{align}
+r&=\frac{\sigma XY}{\sigma X \sigma Y} =& \frac{\sum_{i=1}^n\left(x_i-\overline{x} \right )\left(y_i - \overline{y} \right )}{\sqrt{\left(\sum_i^n\left(x_i - \overline{x}\right)^2 \right )\left(\sum_i^n\left(y_i - \overline{y} \right )^2 \right )}}\\
+b_1 &=& \frac{\sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}^n x_i^2 - n\overline{x}^2}&\\
+b_2 &=& \frac{\sum_{i=1}^n x_i y_i - n\overline{x}\overline{y}}{\sum_{i=1}^n y_i^2 - n\overline{y}^2}&
+\end{align}
+\begin{itemize}
+\item bei positivem $r$ ist der lineare Zusammehang der Merkmale $X$ und $Y$ positiv, bzw gleichläufig
+\item bei negativem $r$ ist der lineare Zusammehnahng der Merkmale $X$ und $Y$ negaziv bzw. gegenläufig
+\item Der Betrag von $r$ kann die Werte 0 bis 1 annehmen. 1 bedeutet sehr startker linearer Zusammehnang, 0 kein linearer Zusammehnang. Die beiden Regressionsgeraden stehen senkrecht aufeinander
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Zeitreihe}
+\begin{tcolorbox}[colback=green!5,colframe=green!40!black, title=Zeitreihe]
+Eine Zeitreihe ist eine zeitlich geordnete Folge von Merkmalswerten. 
+\begin{itemize}
+\item Kosten/Gewinnentwicklung
+\item Verbrauch von Ressourcen
+\item Auftrangseingang
+\item Bearbeitungs oder Durchlaufzeiten
+\end{itemize}
+Die Aufgabe der Zeitreihenanalyse besteht darin, eine Struktur und Gesetzmässigkeit einer Zeitreihe zu erkennen. Sie ist ein Mittel zur Progrnose, oder erkennen eines Trends.
+\end{tcolorbox}
+Der Trend beschreibt die langfristige Grundrichtung einer Zeitreihe. Um ihn streuen die Zeitreihenwerte im Zeitablauf unf für seine Entwicklung sind dauerhaft wirksame Einflüsse verantwortlich. Der Verlauf kann linear oder nichtlinear sein. Wenn er nichtlinear ist, kann er sich einer Exponential, Potenz oder Logistische Funktion annhähern. Die nichtlinearen Verläufe entziehen sich häufig aber der intiuitiven Vorstellung werden daher oft falsch bewertet.
+Die Zeitreihe hat aber einige Stolpersteine. Beispielsweise ist es nicht immer einfach periodische Schwankungen zu erkennen oder besonderer Ereignisse zu identifizieren. Lösen lasen sich diese Probleme durch sogenanntes Glätten des Verlaufs durch beispielsweise den gleitenden Durchschnitt oder die Methode der kleinsten Quadrate (siehe Regression:\autoref{theorie:regression}).
