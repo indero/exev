@@ -24,7 +24,6 @@ Konstruktion dieser Funktion:
 Zuerst minimiert man die Summe des Schätzwertes \autoref{eq:goodcriteria:1}, danach differenziert man nach $\mu = 0$ und erhät die Schätzfunktion zu \autoref{eq:goodcriteria:2}. \\
 Das Ziel des Schätzverfahrens ist, von einer Stichprobe auf eine Grundgesamtheit zu schliessen und den Fehler einer falschen Schätzung zu minimieren oder zu bestimmen.\\
 Hierbei wird zwischen zwei Schätzverfahren:
-\pagebreak[4]
 \begin{itemize}
 \item Punktschätzung
 \subitem Für die Simulation untersuchen wir hier die Parameterschätzung für den Mittelwert $\mu$, die Varianz $\sigma^2$ und für unbekannte Wahrscheinlichkeiten $p$ (auch Anteilswerte genannt).
@@ -64,7 +63,7 @@ Unbekannt & \multicolumn{2}{l}{} \\ \bottomrule
 \subsubsection{Varianzen für die Schätzfunktion}
 \begin{itemize}
 \item Verteilungsformen für das Stichprobenmittel $\overline{X}$
-\begin{table}[h]
+\begin{table}[H]
 \ra{2.5}
 \centering
 \begin{tabular}{@{}lll@{}}
@@ -74,9 +73,9 @@ Ohne Zurücklegen $\frac{n}{N}<0.05$ & $\displaystyle\sigma_{\overline{X}}^2\app
 Mit zurücklegen $\frac{n}{N} \geq 0.05$ & $\displaystyle\sigma_{\overline{X}}^2=\frac{\sigma^2}{n}\cdot\frac{N-n}{N-1}$ & $\displaystyle\widehat{\sigma}_{\overline{X}}^2 =\frac{s^2}{n}\cdot\frac{N-n}{N}$ \\ \bottomrule
 \end{tabular}
 \end{table}
-Hinweis: Das Sigma beinhaltet keinen Bruch: $\sigma_{\overline{X}}^2$
+Hinweis: Das Sigma beinhaltet keinen Bruch: $\sigma_{\overline{X}}^2 \neq \sigma\frac{2}{X}$
+\pagebreak[4]
 \item Varianzen der Schätzfunktion $\overline{X}$
-\newpage
 \subsubsection{Erstellen des Konfidenzintervalls}
 \begin{enumerate}
 	\item Feststellung der Verteilungsform von $\overline{X}$
