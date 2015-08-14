@@ -13,7 +13,7 @@ Letzlich müssen die Parameter oft geschätz werden. Damit man nicht blind raten
 \subsubsection{Gütekriterien für Schätzunktionen}
 Ein Gütekriterium ist die quadratische Abweichung von Schätzfunktionen $\widehat{T}$ und Parameter $T$. Abweichung vom Schätz- oder Basiswertes $\widehat{T}$ vom Wert des Parameters der Grundgesamtheit $T$.
 \begin{equation}
-E[(\widehat{T}-T)^2] = Var(\widehat{T} + [E[\widehat{T}]-T]^2
+E[(\widehat{T}-T)^2] = Var(\widehat{T}) + [E[\widehat{T}]-T]^2
 \end{equation}
 $Var[\cdot]$ ist die Varianz der Schätzfunktion, $[E[\widehat{T}]-T]^2$ ist die quadrierte Abweichung von der Schätzfunktion $T$ und Parameter $T$ der Grundgesamtheit. Ist $E(\widehat{T})-T=0$ ist es Erwartungstreu.
 Konstruktion dieser Funktion:
@@ -37,7 +37,7 @@ Hierbei wird zwischen zwei Schätzverfahren:
 	\begin{equation}
 	\overline{x} = \frac{1}{n}\displaystyle\sum^{n}_{i=1} x_i
 	\end{equation}
-	\item Varianz $\sigma^{n}$: 
+	\item Varianz $\sigma^{2}$: 
 	\begin{equation}
 	s^{2}=\frac{1}{n-1} \displaystyle\sum_{i=1}^{n}(x_i - \overline{x})^{2}
 	\end{equation}
@@ -71,7 +71,7 @@ Unbekannt & \multicolumn{2}{l}{} \\ \bottomrule
 \toprule
 Stichprobe & Varianz $\sigma^2$ bekannt & Varianz $\sigma^2$ unbekannt \\ \midrule
 Ohne Zurücklegen $\frac{n}{N}<0.05$ & $\displaystyle\sigma_{\overline{X}}^2\approx\frac{\sigma}{n}$ & $\displaystyle\widehat{\sigma}_{\overline{X}}^2\approx\frac{s^2}{n}$ \\ 
-Mit zurücklegen $\frac{n}{N} \geq 0.05$ & $\displaystyle\sigma_{\overline{X}}^2=\frac{\sigma^2}{n}\cdot\frac{N-n}{N-1}$ & $\displaystyle\widehat{\sigma}_{\overline{X}}^2 =\frac{s^2}{n}\cdot\frac{N-n}{n}$ \\ \bottomrule
+Mit zurücklegen $\frac{n}{N} \geq 0.05$ & $\displaystyle\sigma_{\overline{X}}^2=\frac{\sigma^2}{n}\cdot\frac{N-n}{N-1}$ & $\displaystyle\widehat{\sigma}_{\overline{X}}^2 =\frac{s^2}{n}\cdot\frac{N-n}{N}$ \\ \bottomrule
 \end{tabular}
 \end{table}
 Hinweis: Das Sigma beinhaltet keinen Bruch: $\sigma_{\overline{X}}^2$
