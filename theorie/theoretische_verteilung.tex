@@ -1,12 +1,45 @@
 \subsection{Theoretische Verteilungen}
 %Folie 15 - 19
+\begin{table}[ht]
+\centering
+\begin{tabular}{lll}
+\toprule
+Parameter & Grundgesamtheit & Stichprobe          \\ \midrule
+arithnmetisches Mittel & $\mu$           &     $\bar{x}$                \\
+Varianz                & $\sigma^2$      & s\textasciicircum 2 \\
+Standardabweichung     & $\sigma$        & s                   \\
+Anzahl der Elemente    & N               & n \\ \bottomrule                 
+\end{tabular}
+\end{table}
 \subsubsection{Binominal-Verteilung}
-Anwendung findet dies wenn sich beispielsweise ein Zufallsexperiment nur in zwei Ergebnissen unterscheidt, das Experiment n-mal wiederholt wird (Zufallsstichprobe vom Umfang n). Gesucht ist meist die Wahrscheinlichkeit, dass bei n-maliger Durchführung des Experimentes das Ereignis: genau, mindistens oder höchstens x-mal Eintrifft.
+Einige Aufgaben, bei denen es sich um einen Bernoulli-Prozess handelt:
 \begin{itemize}
-	\item Wahrscheinlichkeitsfunktion: 
+\item Ziehen mit Zurücklegen
+\item Würfeln
+\item Glücksrad
+\item Roulett
+\item Produktion von Zahnrädern/Glühlampen
+\end{itemize}
+Anwendung findet dies wenn sich beispielsweise ein Zufallsexperiment nur in zwei Ergebnissen unterscheidt, das Experiment n-mal wiederholt wird (Zufallsstichprobe vom Umfang n). Gesucht ist meist die Wahrscheinlichkeit, dass bei n-maliger Durchführung des Experimentes das Ereignis: genau, mindistens oder höchstens k-mal Eintrifft. Bei 
+\begin{itemize}
+	\item Wahrscheinlichkeitsfunktion (Bernullikette): 
 	\begin{equation}
-	f(x)=P(X=x)={n \choose x}p^{x}(1-p)^{n-x}
+	f(x)=P(X=k)={n \choose k}\cdot p^{k}\cdot(1-p)^{n-k}
 	\end{equation}
+		\begin{itemize}
+    	\item $p$ ist die Wahrscheinlichkeit, dass das Ereignis eintritt;
+		\item $n$ ist die Anzahl der Versuche (auch Länge der Bernoulli-Kette genannt);
+		\item $k$ ist die Anzahl der Treffer, die wir erzielen wollen;
+		\item $P(X=k)$ sagt, dass wir die Wahrscheinlichkeit für genau k Treffer errechnen wollen
+		\end{itemize}
+		\item Mindestwarscheindlichkeit:
+		\begin{equation}
+		1 - \Bigg[{n \choose 0}\cdot p^{0}\cdot(1-p)^{n-0}\Bigg]
+		\end{equation}
+		\item Höchstwahrscheindlichkeit:
+		\begin{equation}
+		1 - \Bigg[{n \choose 0}\cdot p^{0}\cdot(1-p)^{n-0}\Bigg]
+		\end{equation}
 	\item Erwartungswert: 
 	\begin{equation}
 	E(X) = n\cdot p
@@ -16,6 +49,7 @@ Anwendung findet dies wenn sich beispielsweise ein Zufallsexperiment nur in zwei
 	Var(X) = n\cdot p(1-p)
 	\end{equation}
 \end{itemize}
+
 \subsubsection{Poisonverteilung}
 Diese Verteilung wird angewendet, wenn man sich dafür interessiert, wie hoch die Wahrscheinlichkeit ist, dass das Ergebnis $E$ in einem Intervall genau oder höchstens x-mal eintritt, wenn bekannt ist, dass in diesem Intervall das Ereignis im Mittel $\mu$-mal auftritt. $\mu$ gibt eine Rate pro Zeitintervall an.
 \begin{itemize}
@@ -75,7 +109,11 @@ Die Normalverteilung ist die wohl wichtigste stetige Verteilung und spielt neben
 	\end{equation}
 	\item Varianz
 	\begin{equation}
-	Var(X) = \sigma
+	Var(X) = \sigma^2
+	\end{equation}
+	\item Standardabweichung
+	\begin{equation}
+	\sqrt{Var(X)} = \sqrt{\sigma^2} = \sigma
 	\end{equation}
 \end{itemize}
 Die Normalverteilung ist eine stetige symmetrische Verteilung. Das Maximum der Dichteverteilung liegt bei $x_{max}=\mu$. Die Wendepunkte liegen bei $x_w=\mu\pm\sigma$. Die Verteilungsfuntkon mit den Werten $\mu=0$ und $\sigma=1$ wird als Standart-Normalverteilung bezeichnet. $N(0;1)=F_0(x)$.
